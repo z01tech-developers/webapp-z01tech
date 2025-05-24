@@ -128,7 +128,6 @@ const FloatingLogo = () => {
           position={[0, 0, 0.05]}
           fontSize={0.6}
           color="#ffffff"
-          font="/fonts/Poppins-Bold.ttf"
           anchorX="center"
           anchorY="middle"
           letterSpacing={0.1}
