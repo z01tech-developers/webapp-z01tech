@@ -1,0 +1,342 @@
+.about-page {
+  min-height: 100vh;
+}
+
+.about-content {
+  padding: var(--spacing-xl) 0;
+}
+
+.about-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.vision-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.section-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+}
+
+.section-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-red);
+}
+
+.large-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-md);
+}
+
+.vision-image {
+  width: 100%;
+  height: 400px;
+  background-color: var(--dark-surface);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), transparent);
+  z-index: 1;
+}
+
+.vision-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, var(--dark-surface), transparent);
+  z-index: 2;
+}
+
+/* Stats Section */
+.stats-section {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+}
+
+.stats-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.stat-card {
+  background-color: var(--dark-surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: var(--transition-normal);
+  border-top: 2px solid var(--accent-red);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Values Section */
+.values-section {
+  margin-top: var(--spacing-xl);
+}
+
+.section-header.center {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header.center h2::after {
+  display: none;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.value-card {
+  background-color: var(--dark-surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  border-left: 2px solid var(--accent-red);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.05), transparent);
+  pointer-events: none;
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: var(--accent-red);
+  margin-bottom: var(--spacing-md);
+}
+
+.value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.value-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Approach Section */
+.approach-section {
+  margin-top: var(--spacing-xl);
+}
+
+.approach-steps {
+  margin-top: var(--spacing-lg);
+}
+
+.approach-step {
+  display: flex;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.approach-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 60px;
+  width: 1px;
+  height: calc(100% - 20px);
+  background: linear-gradient(to bottom, var(--accent-red), transparent);
+}
+
+.step-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  margin-right: var(--spacing-lg);
+  width: 50px;
+  text-align: center;
+  text-shadow: var(--neon-red-glow);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.step-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.about-cta-section {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background-color: var(--dark-surface-lighter);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.about-cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-cta-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.about-cta-section .btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .vision-section {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-image {
+    order: -1;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content h2,
+  .about-cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .large-text {
+    font-size: 1.2rem;
+  }
+
+  .approach-step {
+    flex-direction: column;
+  }
+
+  .approach-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .step-number {
+    margin-bottom: var(--spacing-sm);
+    margin-right: 0;
+    width: auto;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-cta-section h2 {
+    font-size: 1.8rem;
+  }
+}

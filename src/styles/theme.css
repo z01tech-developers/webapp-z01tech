@@ -1,0 +1,39 @@
+:root {
+  /* Color Scheme */
+  --dark-bg: #0A0A0A;
+  --text-primary: #F9F9F9;
+  --accent-red: #FF0000;
+  --accent-orange: #FF4500;
+  --shadow-light: rgba(255, 0, 0, 0.3);
+  --shadow-medium: rgba(255, 0, 0, 0.5);
+  --dark-surface: #121212;
+  --dark-surface-lighter: #1A1A1A;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Fonts */
+  --font-primary: 'Poppins', sans-serif;
+
+  /* Neon Effect */
+  --neon-red-glow: 0 0 5px var(--accent-red),
+                  0 0 10px var(--accent-red),
+                  0 0 15px var(--accent-red);
+  --neon-orange-glow: 0 0 5px var(--accent-orange),
+                     0 0 10px var(--accent-orange),
+                     0 0 15px var(--accent-orange);
+}
