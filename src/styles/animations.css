@@ -1,0 +1,465 @@
+/* WordPress/Elementor-style Animations and Fallbacks */
+
+/* Futuristic Animations and Fallbacks */
+
+/* Hero Animation Fallback */
+.fallback-hero-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+}
+
+.wp-hero-element {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--gradient-blue);
+  position: relative;
+  box-shadow: var(--glow-blue);
+  animation: pulseAndFloat 4s ease-in-out infinite;
+}
+
+.wp-hero-element:before,
+.wp-hero-element:after {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(0, 198, 255, 0.3);
+  animation: ripple 3s linear infinite;
+}
+
+.wp-hero-element:after {
+  animation-delay: 1.5s;
+}
+
+/* About Animation Fallback */
+.fallback-about-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+}
+
+.wp-about-element {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.wp-about-element:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: var(--glow-primary);
+}
+
+.wp-about-element:after {
+  content: 'Z01';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Vision Animation Fallback */
+.fallback-vision-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+}
+
+.wp-vision-element {
+  width: 80px;
+  height: 80px;
+  background: var(--accent-primary);
+  position: relative;
+  transform: rotate(45deg);
+  box-shadow: var(--glow-primary);
+  animation: colorShift 5s ease-in-out infinite;
+}
+
+.wp-vision-element:before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animations */
+@keyframes pulseAndFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.08);
+    box-shadow: 0 0 25px rgba(0, 198, 255, 0.8);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes colorShift {
+  0%, 100% {
+    background-color: var(--accent-primary);
+    box-shadow: var(--glow-primary);
+  }
+  50% {
+    background-color: var(--accent-purple);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.7);
+  }
+}
+
+/* Futuristic Animation Classes */
+.futuristic-fade-in {
+  animation: futuristicFadeIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.futuristic-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: futuristicSlideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.futuristic-slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: futuristicSlideInLeft 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.futuristic-slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: futuristicSlideInRight 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.futuristic-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: futuristicZoomIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.futuristic-bounce {
+  animation: futuristicBounce 1s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.futuristic-pulse {
+  animation: futuristicPulse 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.rotating {
+  animation: rotating 8s linear infinite;
+}
+
+.glowing {
+  animation: glowing 2s ease-in-out infinite;
+}
+
+/* Typing animation */
+.typing-text {
+  overflow: hidden;
+  border-right: 3px solid var(--accent-primary);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Animation Keyframes */
+@keyframes futuristicFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes futuristicSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes futuristicSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes futuristicSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes futuristicZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes futuristicBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes futuristicPulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: none;
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: var(--glow-primary);
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowing {
+  0%, 100% {
+    box-shadow: var(--glow-primary);
+  }
+  50% {
+    box-shadow: var(--glow-blue);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--accent-primary) }
+}
+
+/* Special futuristic effects */
+.neon-border {
+  position: relative;
+  padding: 2px;
+  border-radius: var(--radius-md);
+}
+
+.neon-border:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background: var(--gradient-blue);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-shadow: var(--glow-blue);
+}
+
+.futuristic-blob {
+  background: var(--gradient-primary);
+  width: 200px;
+  height: 200px;
+  filter: blur(70px);
+  opacity: 0.7;
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  animation: blobing 15s infinite alternate ease-in-out;
+}
+
+@keyframes blobing {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 50% 70% / 40% 40% 60% 50%;
+  }
+  75% {
+    border-radius: 60% 50% 60% 40% / 70% 30% 50% 60%;
+  }
+}
+
+/* WordPress/Elementor Animation Classes */
+.wp-fade-in {
+  animation: wpFadeIn 0.8s ease forwards;
+}
+
+.wp-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: wpSlideUp 0.8s ease forwards;
+}
+
+.wp-slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: wpSlideInLeft 0.8s ease forwards;
+}
+
+.wp-slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: wpSlideInRight 0.8s ease forwards;
+}
+
+.wp-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: wpZoomIn 0.8s ease forwards;
+}
+
+.wp-bounce {
+  animation: wpBounce 1s ease infinite;
+}
+
+.wp-pulse {
+  animation: wpPulse 2s ease infinite;
+}
+
+/* Animation Keyframes */
+@keyframes wpFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wpSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wpSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wpSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wpZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wpBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wpPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+} 

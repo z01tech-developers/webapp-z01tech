@@ -1,126 +1,114 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import '../styles/Navbar.css';
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  
+  // Handle scroll for navbar transparency
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
-
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
-
-  const navbarVariants = {
-    hidden: { opacity: 0, y: -20 },
+  
+  const navVariants = {
+    hidden: {
+      opacity: 0,
+      y: -20
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
     }
   };
-
-  const linkVariants = {
-    hover: {
-      scale: 1.1,
-      textShadow: '0 0 8px #FF0000, 0 0 12px #FF0000',
-      transition: { duration: 0.2 }
-    }
+  
+  const menuItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
   };
 
   return (
-    <motion.header
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
+    <motion.nav 
+      className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}
       initial="hidden"
       animate="visible"
-      variants={navbarVariants}
+      variants={navVariants}
     >
-      <div className="navbar-container">
+      <div className="container flex-between">
         <Link to="/" className="logo">
-          <motion.span
-            className="neon-text"
-            whileHover={{ scale: 1.05 }}
-          >
-            Z01 Tech
-          </motion.span>
+          <img src="/logo.svg" alt="Z01 Tech Logo" />
+          <span className="gradient-text">Z01 Tech</span>
         </Link>
-
-        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-
-        <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+        
+        <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <ul>
-            <li>
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={() => setMobileMenuOpen(false)}
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'About', path: '/about' },
+              { name: 'Services', path: '/services' },
+              { name: 'Team', path: '/team' },
+              { name: 'Contact', path: '/contact' }
+            ].map((link, i) => (
+              <motion.li 
+                key={link.name}
+                custom={i}
+                variants={menuItemVariants}
+                initial="hidden"
+                animate="visible"
               >
-                <motion.span variants={linkVariants} whileHover="hover">Home</motion.span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/services"
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <motion.span variants={linkVariants} whileHover="hover">Services</motion.span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <motion.span variants={linkVariants} whileHover="hover">About Us</motion.span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/team"
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <motion.span variants={linkVariants} whileHover="hover">Team</motion.span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <motion.span variants={linkVariants} whileHover="hover">Contact</motion.span>
-              </NavLink>
-            </li>
+                <Link 
+                  to={link.path} 
+                  className={location.pathname === link.path ? 'active' : ''}
+                >
+                  {link.name}
+                </Link>
+              </motion.li>
+            ))}
           </ul>
-        </nav>
-
-        <motion.button
-          className="btn btn-primary"
-          whileHover={{
-            scale: 1.05,
-            boxShadow: '0 0 8px #FF4500, 0 0 15px #FF4500'
-          }}
+        </div>
+        
+        <button 
+          className="mobile-menu-toggle" 
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
         >
-          Get Started
-        </motion.button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </motion.header>
+    </motion.nav>
   );
 };
 

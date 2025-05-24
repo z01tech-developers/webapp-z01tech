@@ -1,13 +1,21 @@
 :root {
-  /* Color Scheme */
-  --dark-bg: #0A0A0A;
-  --text-primary: #F9F9F9;
-  --accent-red: #FF0000;
-  --accent-orange: #FF4500;
-  --shadow-light: rgba(255, 0, 0, 0.3);
-  --shadow-medium: rgba(255, 0, 0, 0.5);
-  --dark-surface: #121212;
-  --dark-surface-lighter: #1A1A1A;
+  /* Futuristic Color Scheme */
+  --light-bg: #f8f9fc;
+  --light-surface: #ffffff;
+  --light-surface-alt: #f2f6ff;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent-primary: #3498db; /* Modern blue */
+  --accent-secondary: #2c3e50; /* Dark blue/slate */
+  --accent-hover: #00c6ff; /* Bright cyan */
+  --shadow-light: rgba(52, 152, 219, 0.1);
+  --shadow-medium: rgba(52, 152, 219, 0.2);
+  
+  /* Secondary Accent Colors */
+  --accent-green: #2ecc71; /* Futuristic green */
+  --accent-purple: #9b59b6; /* Modern purple */
+  --accent-orange: #e67e22; /* Warm orange */
+  --accent-cyan: #00d2d3; /* Bright cyan */
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -20,6 +28,8 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -28,12 +38,33 @@
 
   /* Fonts */
   --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 
-  /* Neon Effect */
-  --neon-red-glow: 0 0 5px var(--accent-red),
-                  0 0 10px var(--accent-red),
-                  0 0 15px var(--accent-red);
-  --neon-orange-glow: 0 0 5px var(--accent-orange),
-                     0 0 10px var(--accent-orange),
-                     0 0 15px var(--accent-orange);
+  /* Box Shadows */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Futuristic Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --glass-blur: blur(8px);
+
+  /* Futuristic Gradients */
+  --gradient-primary: linear-gradient(135deg, #3498db, #9b59b6);
+  --gradient-secondary: linear-gradient(135deg, #2ecc71, #3498db);
+  --gradient-blue: linear-gradient(135deg, #00c6ff, #0072ff);
+  --gradient-purple: linear-gradient(135deg, #da4453, #89216b);
+  --gradient-green: linear-gradient(135deg, #00b09b, #96c93d);
+  --gradient-sunset: linear-gradient(135deg, #ff7e5f, #feb47b);
+  --gradient-cyber: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  --gradient-hero: linear-gradient(140deg, #00c6ff, #0072ff, #00c6ff);
+  
+  /* Futuristic Glows */
+  --glow-primary: 0 0 15px rgba(52, 152, 219, 0.7);
+  --glow-secondary: 0 0 15px rgba(46, 204, 113, 0.7);
+  --glow-blue: 0 0 20px rgba(0, 198, 255, 0.8);
+  --glow-cyan: 0 0 25px rgba(0, 210, 211, 0.6);
 }

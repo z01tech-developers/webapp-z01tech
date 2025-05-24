@@ -1,7 +1,24 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaCode, FaMobileAlt, FaChartLine, FaRocket } from 'react-icons/fa';
+import HeroAnimation from '../components/three/HeroAnimation';
+import AboutAnimation from '../components/three/AboutAnimation';
 import '../styles/Home.css';
+import '../styles/ThreeAnimations.css';
+
+// Fallback components as a backup
+const FallbackHeroAnimation = () => (
+  <div className="fallback-hero-animation">
+    <div className="pulse-circle"></div>
+  </div>
+);
+
+const FallbackAboutAnimation = () => (
+  <div className="fallback-about-animation">
+    <div className="circuit-lines"></div>
+    <div className="floating-text">Z01 TECH</div>
+  </div>
+);
 
 const Home = () => {
   const fadeInUp = {
@@ -55,6 +72,7 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section">
+        <HeroAnimation />
         <div className="hero-content">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -101,15 +119,7 @@ const Home = () => {
           </motion.div>
         </div>
         <div className="hero-image-container">
-          <motion.div
-            className="hero-image"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Futuristic tech graphic or animation would go here */}
-            <div className="tech-graphic"></div>
-          </motion.div>
+          {/* The Three.js animation replaces the static tech-graphic */}
         </div>
       </section>
 
@@ -142,7 +152,7 @@ const Home = () => {
                 variants={fadeInUp}
                 whileHover={{
                   y: -10,
-                  boxShadow: '0 10px 20px rgba(0,0,0,0.2), 0 0 15px rgba(255,0,0,0.5)'
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.2), 0 0 15px rgba(255,82,82,0.3)'
                 }}
               >
                 <div className="service-icon">
@@ -178,7 +188,7 @@ const Home = () => {
                   className="btn btn-primary"
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: '0 0 15px #FF4500'
+                    boxShadow: '0 0 15px #ff7b52'
                   }}
                 >
                   About Us
@@ -192,7 +202,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="tech-team-image"></div>
+              <AboutAnimation />
             </motion.div>
           </div>
         </div>
@@ -215,7 +225,7 @@ const Home = () => {
                 className="btn btn-primary"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: '0 0 20px #FF4500'
+                  boxShadow: '0 0 20px #ff7b52'
                 }}
               >
                 Get in Touch

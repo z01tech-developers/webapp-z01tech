@@ -7,6 +7,10 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 
+import './styles/global.css';
+import './styles/animations.css';
+import './styles/components.css';
+
 function App() {
   return (
     <BrowserRouter>

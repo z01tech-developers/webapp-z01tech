@@ -1,7 +1,19 @@
 import { motion } from 'framer-motion';
 import { FaLightbulb, FaUserAstronaut, FaRocket, FaCog } from 'react-icons/fa';
 import PageHeader from '../components/PageHeader';
+import VisionAnimation from '../components/three/VisionAnimation';
 import '../styles/About.css';
+import '../styles/ThreeAnimations.css';
+
+// Fallback component as a backup
+const FallbackVisionAnimation = () => (
+  <div className="fallback-vision-animation">
+    <div className="lightbulb-icon">
+      <div className="bulb"></div>
+      <div className="base"></div>
+    </div>
+  </div>
+);
 
 const About = () => {
   const fadeInUp = {
@@ -82,7 +94,7 @@ const About = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              {/* Vision image placeholder */}
+              <VisionAnimation />
             </motion.div>
           </section>
 
@@ -99,7 +111,7 @@ const About = () => {
                 <motion.div
                   key={index}
                   className="stat-card"
-                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 0, 0, 0.3)' }}
+                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 82, 82, 0.3)' }}
                 >
                   <h3 className="stat-value neon-text">{stat.value}</h3>
                   <p className="stat-label">{stat.label}</p>
@@ -131,7 +143,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 0, 0, 0.3)' }}
+                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 82, 82, 0.3)' }}
                 >
                   <div className="value-icon">
                     {value.icon}
@@ -211,7 +223,7 @@ const About = () => {
               className="btn btn-primary"
               whileHover={{
                 scale: 1.05,
-                boxShadow: '0 0 15px #FF4500'
+                boxShadow: '0 0 15px #ff7b52'
               }}
               onClick={() => window.location.href = '/contact'}
             >
