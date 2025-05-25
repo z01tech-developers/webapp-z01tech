@@ -96,11 +96,11 @@ const Footer: React.FC = () => {
                   </li>
                   <li>
                     <i className="icon-phone"></i>
-                    <span>(123) 456-7890</span>
+                    <span>7892442633</span>
                   </li>
                   <li>
                     <i className="icon-email"></i>
-                    <span>info@z01tech.com</span>
+                    <span>management@z01.tech</span>
                   </li>
                 </ul>
               </motion.div>

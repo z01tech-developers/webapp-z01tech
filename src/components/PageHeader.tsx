@@ -41,7 +41,7 @@ const PageHeader = ({ title, subtitle, backgroundImage }: PageHeaderProps) => {
           variants={headerVariants}
         >
           <motion.h1 className="header-title" variants={textVariants}>
-            <span className="neon-text">{title}</span>
+            <span className="gradient-text">{title}</span>
           </motion.h1>
           {subtitle && (
             <motion.p className="header-subtitle" variants={textVariants}>
